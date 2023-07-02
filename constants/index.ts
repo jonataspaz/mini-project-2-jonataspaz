@@ -1,0 +1,17 @@
+export const manufacturers = [
+  "Audi",
+  "BMW",
+  "Chevrolet",
+  "Citroen",
+  "Ford",
+  "Hyundai",
+  "Kia",
+  "Mazda",
+  "Mercedes-Benz",
+  "MINI",
+  "Nissan",
+  "Porsche",
+  "Tesla",
+  "Volkswagen",
+  "Volvo",
+];

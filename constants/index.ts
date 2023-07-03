@@ -2,7 +2,6 @@ export const manufacturers = [
   "Audi",
   "BMW",
   "Chevrolet",
-  "Citroen",
   "Ford",
   "Hyundai",
   "Kia",

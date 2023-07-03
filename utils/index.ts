@@ -1,6 +1,4 @@
-import { Result } from "postcss";
 import { CarProps, FilterProps } from "@/types";
-import { manufacturers } from "@/constants";
 
 export async function getCars(filters: FilterProps) {
   const { manufacturer, model } = filters;
@@ -38,12 +36,9 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
   const url = new URL("https://cdn.imagin.studio/getimage");
   const { make, model, year } = car;
 
-  url.searchParams.append("customer", "hrjavascript-mastery");
+  url.searchParams.append("customer", "copyright-imaginstudio");
   url.searchParams.append("make", make);
-  url.searchParams.append(
-    "modelFamily",
-    model.split(" ")[0] + " " + model.split(" ")[1]
-  );
+  url.searchParams.append("modelFamily", model.split(" ")[0]);
   url.searchParams.append("zoomType", "fullscreen");
   url.searchParams.append("modelYear", `${year}`);
   url.searchParams.append("angle", `${angle}`);

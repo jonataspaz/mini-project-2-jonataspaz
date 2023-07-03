@@ -110,21 +110,27 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                     <div className="mt-3 flex flex-wrap gap-4">
                       {Object.entries(car)
                         .filter(([key, value]) => !excludedKeys.includes(key))
-                        .map(([key, value]) => (
-                          <div
-                            className="flex justify-between gap-5 w-full text-right"
-                            key={key}
-                          >
-                            <h4 className="text-white font-extrabold capitalize">
-                              {key.split("_").join(" ")}
-                            </h4>
-                            <p className="text-white font-extrabold">
-                              {typeof value === "string"
-                                ? value.toUpperCase()
-                                : value}
-                            </p>
-                          </div>
-                        ))}
+                        .map(([key, value]) => {
+                          // Change the key name "make" to "brand"
+                          if (key === "city_mpg") {
+                            key = "Energy consumption";
+                          }
+                          return (
+                            <div
+                              className="flex justify-between gap-5 w-full text-right"
+                              key={key}
+                            >
+                              <h4 className="text-white font-extrabold capitalize">
+                                {key.split("_").join(" ")}
+                              </h4>
+                              <p className="text-white font-extrabold">
+                                {typeof value === "string"
+                                  ? value.toUpperCase()
+                                  : value}
+                              </p>
+                            </div>
+                          );
+                        })}
                     </div>
                   </div>
                 </Dialog.Panel>
